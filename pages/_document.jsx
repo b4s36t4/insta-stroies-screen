@@ -3,14 +3,13 @@ import Document, {
   Head,
   Main,
   NextScript,
-  DocumentContext,
 } from "next/document";
 import { CssBaseline } from "@nextui-org/react";
 
 //Curstom Document for next.js to support Server Side rendering of component from nextui @ Adapted from nextui documentatation page
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     return {
       ...initialProps,
