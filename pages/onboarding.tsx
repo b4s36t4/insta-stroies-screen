@@ -1,7 +1,6 @@
-import { Button, Container, Grid, Progress, Spacer } from "@nextui-org/react";
+import { Container, Progress } from "@nextui-org/react";
 import Head from "next/head";
-import React, { useEffect, useRef, useState } from "react";
-// import ReactPlayer from "react-player";
+import React, { useEffect, useState } from "react";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { BsFillVolumeMuteFill, BsFillVolumeUpFill } from "react-icons/bs";
 import dynamic from "next/dynamic";
@@ -20,9 +19,7 @@ interface videos {
   [key: string | number]: VideoState;
 }
 function Onboarding() {
-  const [duration, setDuration] = useState<undefined | number>(0);
   const [videoState, setVideoState] = useState<VideoState[]>([]);
-  const [playing, setPlaying] = useState<boolean>(false);
   const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const refs = [
@@ -52,12 +49,6 @@ function Onboarding() {
     }
     setVideoState(videosState);
   }, []);
-  useEffect(() => {
-    const currentRef = refs[currentVideoIndex];
-    if (currentRef) {
-      setDuration((currentRef?.current?.duration || 0) * 1000);
-    }
-  }, [currentVideoIndex, refs]);
 
   //   useEffect(() => {
   //     const prevVideoRef = refs[currentVideoIndex - 1];
