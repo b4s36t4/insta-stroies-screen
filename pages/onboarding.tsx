@@ -5,7 +5,7 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { BsFillVolumeMuteFill, BsFillVolumeUpFill } from "react-icons/bs";
 import dynamic from "next/dynamic";
 
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+// const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface VideoState {
   duration: number;
